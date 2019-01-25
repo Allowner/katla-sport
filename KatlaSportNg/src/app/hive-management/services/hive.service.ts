@@ -11,7 +11,7 @@ import { HiveSectionListItem } from '../models/hive-section-list-item';
 })
 export class HiveService {
   private url = environment.apiUrl + 'api/hives/';
-
+  receivedHive: Hive;
   constructor(private http: HttpClient) { }
 
   getHives(): Observable<Array<HiveListItem>> {
@@ -39,6 +39,6 @@ export class HiveService {
   }
 
   setHiveStatus(hiveId: number, deletedStatus: boolean): Observable<Object> {
-    return null;
+    return this.http.put(`${this.url}${hiveId}/status/${deletedStatus}`, deletedStatus);
   }
 }
