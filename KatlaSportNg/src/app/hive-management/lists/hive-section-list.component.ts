@@ -37,4 +37,8 @@ export class HiveSectionListComponent implements OnInit {
     var hiveSection = this.hiveSections.find(h => h.id == hiveSectionId);
     this.hiveSectionService.setHiveSectionStatus(hiveSectionId, false).subscribe(c => hiveSection.isDeleted = false);
   }
+
+  onAdd(){
+    this.router.navigate([`hive/${this.hiveId}/section`]);
+  }
 }

@@ -32,8 +32,8 @@
     <div class="btn-group mr-1" role="group" aria-label="Back group">
       <button routerLink="/hives" type="button" class="btn btn-primary">Back</button>
     </div>
-    <div class="btn-group" role="group" aria-label="Add group">
-      <button routerLink="/hive/{{this.hiveId}}" type="button" class="btn btn-primary">Add hive section</button>
+    <div class="btn-group" role="group" aria-label="Add group" (click)="onAdd()">
+      <button type="button" class="btn btn-primary">Add hive section</button>
     </div>
   </div>
 </div>
