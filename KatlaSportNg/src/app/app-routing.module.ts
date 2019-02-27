@@ -5,6 +5,7 @@ import { HiveFormComponent } from './hive-management/forms/hive-form.component';
 import { HiveSectionFormComponent } from './hive-management/forms/hive-section-form.component';
 import { HiveListComponent } from './hive-management/lists/hive-list.component';
 import { HiveSectionListComponent } from './hive-management/lists/hive-section-list.component';
+import { HiveSectionProductListComponent } from './hive-management/lists/hive-section-product-list.component';
 import { ProductCategoryFormComponent } from './product-management/forms/product-category-form.component';
 import { ProductFormComponent } from './product-management/forms/product-form.component';
 import { ProductCategoryListComponent } from './product-management/lists/product-category-list.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'hive', component: HiveFormComponent },
   { path: 'hive/:id', component: HiveFormComponent },
   { path: 'hive/:id/sections', component: HiveSectionListComponent },
+  { path: 'section/:hiveSectionId/products', component: HiveSectionProductListComponent },
   { path: 'hive/:hiveId/section', component: HiveSectionFormComponent },
   { path: 'section/:id', component: HiveSectionFormComponent },
 ];
