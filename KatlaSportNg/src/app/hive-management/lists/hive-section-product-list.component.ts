@@ -10,8 +10,8 @@ import { HiveSectionService } from '../services/hive-section.service';
 })
 export class HiveSectionProductListComponent implements OnInit {
 
-  hiveId: number;
-  hiveSections: Array<HiveSectionProductListItem>;
+  hiveSectionId: number;
+  hiveSectionProducts: Array<HiveSectionProductListItem>;
 
   constructor(
     private route: ActivatedRoute,

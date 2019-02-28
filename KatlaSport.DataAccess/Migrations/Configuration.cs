@@ -283,87 +283,111 @@ namespace KatlaSport.DataAccess.Migrations
                 i => i.Id,
                 new StoreItem // #1
                 {
-                    Id = 1,
+                    Id = 38110,
                     Quantity = 10,
                     HiveSectionId = 1,
-                    ProductId = 1
+                    ProductId = 1,
+                    IsDeleted = false,
+                    IsDelivered = true
                 },
                 new StoreItem
                 {
-                    Id = 2,
+                    Id = 38111,
                     Quantity = 1,
                     HiveSectionId = 3,
-                    ProductId = 1
+                    ProductId = 1,
+                    IsDeleted = false,
+                    IsDelivered = true
                 },
                 new StoreItem
                 {
-                    Id = 3,
+                    Id = 38112,
                     Quantity = 0,
                     HiveSectionId = 5,
-                    ProductId = 1
+                    ProductId = 1,
+                    IsDeleted = false,
+                    IsDelivered = true
                 },
                 new StoreItem // #2
                 {
-                    Id = 4,
+                    Id = 38113,
                     Quantity = 5,
                     HiveSectionId = 1,
-                    ProductId = 2
+                    ProductId = 2,
+                    IsDeleted = false,
+                    IsDelivered = true
                 },
                 new StoreItem
                 {
-                    Id = 5,
+                    Id = 38114,
                     Quantity = 100,
                     HiveSectionId = 3,
-                    ProductId = 2
+                    ProductId = 2,
+                    IsDeleted = false,
+                    IsDelivered = true
                 },
                 new StoreItem
                 {
-                    Id = 6,
+                    Id = 38115,
                     Quantity = 10,
                     HiveSectionId = 5,
-                    ProductId = 2
+                    ProductId = 2,
+                    IsDeleted = false,
+                    IsDelivered = true
                 },
                 new StoreItem // #3
                 {
-                    Id = 7,
+                    Id = 38116,
                     Quantity = 10,
                     HiveSectionId = 1,
-                    ProductId = 3
+                    ProductId = 3,
+                    IsDeleted = false,
+                    IsDelivered = true
                 },
                 new StoreItem
                 {
-                    Id = 8,
+                    Id = 38117,
                     Quantity = 10,
                     HiveSectionId = 3,
-                    ProductId = 3
+                    ProductId = 3,
+                    IsDeleted = false,
+                    IsDelivered = true
                 },
                 new StoreItem
                 {
-                    Id = 9,
+                    Id = 38118,
                     Quantity = 10,
                     HiveSectionId = 5,
-                    ProductId = 3
+                    ProductId = 3,
+                    IsDeleted = false,
+                    IsDelivered = true
                 },
                 new StoreItem // #4
                 {
-                    Id = 13,
+                    Id = 38119,
                     Quantity = 4,
                     HiveSectionId = 2,
-                    ProductId = 4
+                    ProductId = 4,
+                    IsDeleted = false,
+                    IsDelivered = true
                 },
                 new StoreItem
                 {
-                    Id = 14,
+                    Id = 38120,
                     Quantity = 0,
                     HiveSectionId = 4,
-                    ProductId = 4
+                    ProductId = 4,
+                    IsDeleted = false,
+                    IsDelivered = true
                 },
                 new StoreItem
                 {
-                    Id = 15,
+                    Id = 38121,
                     Quantity = 0,
                     HiveSectionId = 6,
-                    ProductId = 4
+                    ProductId = 4,
+                    IsDeleted = false,
+                    IsDelivered = true
                 });
 
             context.Customers.AddOrUpdate(

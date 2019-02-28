@@ -1,15 +1,12 @@
-﻿using KatlaSport.DataAccess.ProductCatalogue;
-using KatlaSport.DataAccess.ProductStoreHive;
-
-namespace KatlaSport.DataAccess.ProductStore
+﻿namespace KatlaSport.Services.HiveManagement
 {
     /// <summary>
-    /// Represents a product store item.
+    /// Represents a product in a hive section.
     /// </summary>
-    public class StoreItem
+    public class HiveSectionProduct
     {
         /// <summary>
-        /// Gets or sets a product store item ID.
+        /// Gets or sets a section product identifier.
         /// </summary>
         public int Id { get; set; }
 
@@ -19,12 +16,12 @@ namespace KatlaSport.DataAccess.ProductStore
         public int ProductId { get; set; }
 
         /// <summary>
-        /// Gets or sets a product.
+        /// Gets or sets a product quantity.
         /// </summary>
-        public virtual CatalogueProduct Product { get; set; }
+        public int Quantity { get; set; }
 
         /// <summary>
-        /// Gets or sets a location ID.
+        /// Gets or sets a store hive section id.
         /// </summary>
         public int HiveSectionId { get; set; }
 
@@ -37,15 +34,5 @@ namespace KatlaSport.DataAccess.ProductStore
         /// Gets or sets a value indicating whether a product is delivered.
         /// </summary>
         public bool IsDelivered { get; set; }
-
-        /// <summary>
-        /// Gets or sets a location.
-        /// </summary>
-        public virtual StoreHiveSection HiveSection { get; set; }
-
-        /// <summary>
-        /// Gets or sets a quantity of items of certain product in the location.
-        /// </summary>
-        public int Quantity { get; set; }
     }
 }

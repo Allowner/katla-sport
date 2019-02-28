@@ -79,6 +79,7 @@
     <Compile Include="HiveAnalytics\HiveAnalysisService.cs" />
     <Compile Include="HiveAnalytics\IHiveAnalysisService.cs" />
     <Compile Include="HiveManagement\HiveManagementMappingProfile.cs" />
+    <Compile Include="HiveManagement\HiveSectionProductService.cs" />
     <Compile Include="HiveManagement\HiveSectionService.cs" />
     <Compile Include="HiveManagement\HiveService.cs" />
     <Compile Include="IUserContext.cs" />
