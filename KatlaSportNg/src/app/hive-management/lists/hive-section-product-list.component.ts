@@ -49,4 +49,11 @@ export class HiveSectionProductListComponent implements OnInit {
     var item = this.hiveSectionProducts.find(h => h.id == itemId);
     this.hiveSectionProductService.setItemStatus(itemId, false).subscribe(c => item.isDeleted = false);
   }
+
+  filterItems(){
+    if (this.hiveSectionProducts != undefined)
+    {
+      return this.hiveSectionProducts.filter(x => x.isDelivered == true);
+    }
+  }
 }

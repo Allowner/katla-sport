@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Forwarder list</h2>
+    <table class="table table-nonfluid">
+      <thead>
+        <th scope="col">#</th>
+        <th scope="col">HiveSectionId</th>
+        <th scope="col">ProductId</th>
+        <th scope="col">Quantity</th>
+        <th scope="col"></th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hiveSectionProduct of filterItems()">
+          <th scope="row">{{hiveSectionProduct.id}}</th>
+          <td>{{hiveSectionProduct.hiveSectionId}}</td>
+          <td>{{hiveSectionProduct.productId}}</td>
+          <td>{{hiveSectionProduct.quantity}}</td>
+          <td>
+            <span class="btn-toolbar" role="toolbar" aria-label="Hive section action buttons" style="display: block; white-space:nowrap;">
+              <div class="btn-group mr-2" role="group" aria-label="Deliver group" (click)="onDeliver(hiveSectionProduct.id)">
+                <button type="button" class="btn btn-primary">Delivered</button>
+              </div>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -9,7 +9,7 @@
         <th scope="col"></th>
       </thead>
       <tbody>
-        <tr *ngFor="let hiveSectionProduct of hiveSectionProducts">
+        <tr *ngFor="let hiveSectionProduct of filterItems()">
           <th scope="row">{{hiveSectionProduct.id}}</th>
           <td>{{hiveSectionProduct.productId}}</td>
           <td>{{hiveSectionProduct.quantity}}</td>
