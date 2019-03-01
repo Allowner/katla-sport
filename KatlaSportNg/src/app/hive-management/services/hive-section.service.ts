@@ -4,6 +4,7 @@ import { environment } from 'environments/environment';
 import { Observable } from 'rxjs';
 import { HiveSection } from '../models/hive-section';
 import { HiveSectionListItem } from '../models/hive-section-list-item';
+import { HiveSectionProductListItem } from '../models/hive-section-product-list-item';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,10 @@ export class HiveSectionService {
 
   getHiveSections(): Observable<Array<HiveSectionListItem>> {
     return this.http.get<Array<HiveSectionListItem>>(this.url);
+  }
+
+  getItems(hiveSectionId: number): Observable<Array<HiveSectionProductListItem>> {
+    return this.http.get<Array<HiveSectionProductListItem>>(`${this.url}${hiveSectionId}/items`);
   }
 
   getHiveSection(hiveSectionId: number): Observable<HiveSection> {

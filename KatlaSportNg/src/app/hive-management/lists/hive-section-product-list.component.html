@@ -3,17 +3,17 @@
     <table class="table table-nonfluid">
       <thead>
         <th scope="col">#</th>
-        <th scope="col">Code</th>
-        <th scope="col">Name</th>
-        <th scope="col">Amount</th>
+        <th scope="col">ProductId</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">IsDelivered</th>
         <th scope="col"></th>
       </thead>
       <tbody>
         <tr *ngFor="let hiveSectionProduct of hiveSectionProducts">
           <th scope="row">{{hiveSectionProduct.id}}</th>
-          <td>{{hiveSectionProduct.code}}</td>
-          <td>{{hiveSectionProduct.name}}</td>
-          <td>{{hiveSectionProduct.amount}}</td>
+          <td>{{hiveSectionProduct.productId}}</td>
+          <td>{{hiveSectionProduct.quantity}}</td>
+          <td>{{hiveSectionProduct.isDelivered}}</td>
           <td>
             <span class="btn-toolbar" role="toolbar" aria-label="Hive section action buttons" style="display: block; white-space:nowrap;">
             </span>
@@ -21,7 +21,7 @@
         </tr>
       </tbody>
     </table>
-    <div class="btn-toolbar" role="toolbar" aria-label="Action buttons">
+    <div class="btn-toolbar" role="toolbar" aria-label="Action buttons" (click)="back()">
       <div class="btn-group mr-1" role="group" aria-label="Back group">
         <button type="button" class="btn btn-primary">Back</button>
       </div>

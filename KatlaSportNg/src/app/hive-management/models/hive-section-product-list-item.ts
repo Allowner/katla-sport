@@ -1,10 +1,10 @@
 export class HiveSectionProductListItem {
     constructor(
         public id: number,
-        public code: string,
-        public name: string,
-        public amount: number,
+        public productId: number,
+        public quantity: number,
         public isDeleted: boolean,
+        public isDelivered: boolean,
         public storeHiveSectionId: number
     ) { }
 }

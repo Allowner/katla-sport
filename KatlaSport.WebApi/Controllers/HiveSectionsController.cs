@@ -19,10 +19,12 @@ namespace KatlaSport.WebApi.Controllers
     public class HiveSectionsController : ApiController
     {
         private readonly IHiveSectionService _hiveSectionService;
+        private readonly IHiveSectionProductService _hiveSectionProductService;
 
-        public HiveSectionsController(IHiveSectionService hiveSectionService)
+        public HiveSectionsController(IHiveSectionService hiveSectionService, IHiveSectionProductService hiveSectionProductService)
         {
             _hiveSectionService = hiveSectionService ?? throw new ArgumentNullException(nameof(hiveSectionService));
+            _hiveSectionProductService = hiveSectionProductService ?? throw new ArgumentNullException(nameof(hiveSectionProductService));
         }
 
         [HttpGet]
@@ -43,6 +45,17 @@ namespace KatlaSport.WebApi.Controllers
         public async Task<IHttpActionResult> GetHiveSection(int hiveSectionId)
         {
             var hive = await _hiveSectionService.GetHiveSectionAsync(hiveSectionId);
+            return Ok(hive);
+        }
+
+        [HttpGet]
+        [Route("{hiveSectionId:int:min(1)}/items")]
+        [SwaggerResponse(HttpStatusCode.OK, Description = "Returns a list of products for specified hive section.", Type = typeof(HiveSectionListItem))]
+        [SwaggerResponse(HttpStatusCode.NotFound)]
+        [SwaggerResponse(HttpStatusCode.InternalServerError)]
+        public async Task<IHttpActionResult> GetItems(int hiveSectionId)
+        {
+            var hive = await _hiveSectionProductService.GetHiveSectionProductsAsync(hiveSectionId);
             return Ok(hive);
         }
 
