@@ -16,6 +16,15 @@
           <td>{{hiveSectionProduct.isDelivered}}</td>
           <td>
             <span class="btn-toolbar" role="toolbar" aria-label="Hive section action buttons" style="display: block; white-space:nowrap;">
+              <div class="btn-group mr-2" role="group" aria-label="Edit group">
+                <button routerLink="/item/{{hiveSectionProduct.id}}" type="button" class="btn btn-primary">Edit</button>
+              </div>
+              <div class="btn-group mr-2" role="group" aria-label="Delete group" *ngIf="hiveSectionProduct.isDeleted != true" (click)="onDelete(hiveSectionProduct.id)">
+                <button type="button" class="btn btn-danger">Delete</button>
+              </div>
+              <div class="btn-group mr-2" role="group" aria-label="Undelete group" *ngIf="hiveSectionProduct.isDeleted == true" (click)="onUndelete(hiveSectionProduct.id)">
+                <button type="button" class="btn btn-primary">Undelete</button>
+              </div>
             </span>
           </td>
         </tr>

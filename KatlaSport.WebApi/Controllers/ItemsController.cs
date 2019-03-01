@@ -64,7 +64,7 @@ namespace KatlaSport.WebApi.Controllers
         [SwaggerResponse(HttpStatusCode.InternalServerError)]
         public async Task<IHttpActionResult> SetDeliveredStatus([FromUri] int itemId, [FromUri] bool deliveredStatus)
         {
-            await _hiveSectionProductService.SetDeliverStatusAsync(itemId, deliveredStatus);
+            await _hiveSectionProductService.SetDeliveredStatusAsync(itemId, deliveredStatus);
             return ResponseMessage(Request.CreateResponse(HttpStatusCode.NoContent));
         }
 

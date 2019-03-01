@@ -28,12 +28,25 @@ export class HiveSectionProductListComponent implements OnInit {
       this.hiveSectionId = p['hiveSectionId'];
       this.hiveSectionService.getItems(this.hiveSectionId).subscribe(s => this.hiveSectionProducts = s);
     })
+
+    this.hiveSectionService.getHiveSection(this.hiveSectionId).subscribe(data => this.section = data);
   }
 
-  /*back(){
-    this.hiveSectionService.getHiveSection(this.hiveSectionId).subscribe(
-      (response: HiveSection) => this.section = { ...response.storeHiveId }).;
-
+  back() {
     this.router.navigate([`/hive/${this.section.storeHiveId}/sections`]);
-  }*/
+  }
+
+  onAdd() {
+    this.router.navigate([`/section/${this.hiveSectionId}/item`]);
+  }
+
+  onDelete(itemId: number) {
+    var item = this.hiveSectionProducts.find(h => h.id == itemId);
+    this.hiveSectionProductService.setItemStatus(itemId, true).subscribe(c => item.isDeleted = true);
+  }
+
+  onUndelete(itemId: number){
+    var item = this.hiveSectionProducts.find(h => h.id == itemId);
+    this.hiveSectionProductService.setItemStatus(itemId, false).subscribe(c => item.isDeleted = false);
+  }
 }

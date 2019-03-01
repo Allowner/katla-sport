@@ -1,0 +1,46 @@
+<div class="container">
+    <h2>Hive Section Product Editor</h2>
+    <form (ngSubmit)="onSubmit()" #hiveSectionForm="ngForm">
+      <div class="form-group" *ngIf='existed'>
+        <label for="idLabel">ID</label>
+        <input type="text" class="form-control" id="id" aria-describedby="idLabel" [(ngModel)]="hiveSectionProduct.id" name="id" #id="ngModel"
+          readonly>
+      </div>
+      <div class="form-group">
+        <label for="productId" id="productIdLabel">ProductID</label>
+        <input type="text" class="form-control" id="productId" aria-describedby="productIdLabel" minlength="1" required [(ngModel)]="hiveSectionProduct.productId"
+          name="productId" #productId="ngModel">
+        <div *ngIf="productId.invalid && (productId.dirty || productId.touched)" class="alert alert-danger">
+          <div *ngIf="productId.errors.required">Hive productId is required.</div>
+          <div *ngIf="productId.errors.minlength">Hive productId must be at least 1 characters long.</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="quantity" id="quantityLabel">Quantity</label>
+        <input type="text" class="form-control" id="quantity" aria-describedby="quantityLabel" minlength="1" required [(ngModel)]="hiveSectionProduct.quantity"
+          name="quantity" #quantity="ngModel">
+        <div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)" class="alert alert-danger">
+          <div *ngIf="quantity.errors.required">Hive Code is required.</div>
+          <div *ngIf="quantity.errors.minlength">Hive Code must be at least 1 characters long.</div>
+        </div>
+      </div>
+      <div class="btn-toolbar" role="toolbar" aria-label="Action buttons">
+        <div class="btn-group mr-2" role="group" aria-label="Back group" (click)="navigateToProducts()">
+          <button type="button" class="btn btn-primary">Back</button>
+        </div>
+        <div class="btn-group mr-2" role="group" aria-label="Save group" (click)="onSubmit()">
+          <button type="button" class="btn btn-primary">Save</button>
+        </div>
+        <div class="btn-group mr-2" role="group" aria-label="Delete group" *ngIf="hiveSectionProduct.isDeleted != true" (click)="onDelete()">
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+        <div class="btn-group mr-2" role="group" aria-label="Undelete group" *ngIf="hiveSectionProduct.isDeleted == true" (click)="onUndelete()">
+          <button type="button" class="btn btn-primary">Undelete</button>
+        </div>
+        <div class="btn-group mr-2" role="group" aria-label="Purge group" (click)="onPurge()">
+          <button type="button" class="btn btn-primary">Purge</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  

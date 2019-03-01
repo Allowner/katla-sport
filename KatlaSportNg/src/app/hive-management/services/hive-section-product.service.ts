@@ -16,4 +16,28 @@ export class HiveSectionProductService {
   getItems(): Observable<Array<HiveSectionProductListItem>> {
     return this.http.get<Array<HiveSectionProductListItem>>(this.url);
   }
+
+  getItem(itemId: number): Observable<HiveSectionProductListItem> {
+    return this.http.get<HiveSectionProductListItem>(`${this.url}${itemId}`);
+  }
+
+  addItem(item: HiveSectionProductListItem): Observable<HiveSectionProductListItem> {
+    return this.http.post<HiveSectionProductListItem>(`${this.url}`, item);
+  }
+
+  updateItem(item: HiveSectionProductListItem): Observable<Object> {
+    return this.http.put<HiveSectionProductListItem>(`${this.url}${item.id}`, item);
+  }
+
+  deleteItem(itemId: number): Observable<Object> {
+    return this.http.delete<HiveSectionProductListItem>(`${this.url}${itemId}`);
+  }
+
+  setItemStatus(itemId: number, deletedStatus: boolean): Observable<Object> {
+    return this.http.put(`${this.url}${itemId}/status/${deletedStatus}`, deletedStatus);
+  }
+
+  setItemDeliveredStatus(itemId: number, deliveredStatus: boolean): Observable<Object> {
+    return this.http.put(`${this.url}${itemId}/deliveredStatus/${deliveredStatus}`, deliveredStatus);
+  }
 }

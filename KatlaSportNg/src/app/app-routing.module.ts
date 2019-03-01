@@ -11,6 +11,7 @@ import { ProductFormComponent } from './product-management/forms/product-form.co
 import { ProductCategoryListComponent } from './product-management/lists/product-category-list.component';
 import { ProductCategoryProductListComponent } from './product-management/lists/product-category-product-list.component';
 import { ProductListComponent } from './product-management/lists/product-list.component';
+import { HiveSectionProductFormComponent } from './hive-management/forms/hive-section-product-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
@@ -27,6 +28,8 @@ const routes: Routes = [
   { path: 'hive/:id', component: HiveFormComponent },
   { path: 'hive/:id/sections', component: HiveSectionListComponent },
   { path: 'section/:hiveSectionId/products', component: HiveSectionProductListComponent },
+  { path: 'section/:hiveSectionId/item', component: HiveSectionProductFormComponent },
+  { path: 'item/:id', component: HiveSectionProductFormComponent },
   { path: 'hive/:hiveId/section', component: HiveSectionFormComponent },
   { path: 'section/:id', component: HiveSectionFormComponent },
 ];

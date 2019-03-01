@@ -78,7 +78,7 @@ namespace KatlaSport.Services.HiveManagement
             return storeItems;
         }
 
-        public async Task SetDeliverStatusAsync(int productId, bool deliveredStatus)
+        public async Task SetDeliveredStatusAsync(int productId, bool deliveredStatus)
         {
             var dbStoreItems = await _context.Items.Where(c => productId == c.Id).ToArrayAsync();
             if (dbStoreItems.Length == 0)

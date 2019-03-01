@@ -61,6 +61,6 @@ namespace KatlaSport.Services.HiveManagement
         /// <param name="productId">A hive section product identifier.</param>
         /// <param name="deliveredStatus">Status.</param>
         /// <returns>A <see cref="Task"/>.</returns>
-        Task SetDeliverStatusAsync(int productId, bool deliveredStatus);
+        Task SetDeliveredStatusAsync(int productId, bool deliveredStatus);
     }
 }
